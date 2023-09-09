@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} user@your_server_ip "cd /var/www/brainstormtest.hopto.org && git pull origin main"
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@13.235.16.99 "cd /var/www/brainstormtest.hopto.org && git pull origin main"
