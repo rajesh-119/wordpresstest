@@ -20,4 +20,8 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@13.235.16.99
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@13.235.16.99 << EOF
+          cd /var/www/brainstormtest.hopto.org
+          git pull origin main 
+          # Additional deployment steps if needed
+          EOF
