@@ -18,7 +18,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy to server
+      - name: Deploy to servers
         run: |
           ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@13.235.16.99 << EOF
           cd /var/www/brainstormtest.hopto.org
