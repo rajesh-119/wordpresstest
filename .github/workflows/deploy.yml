@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -i ${{ runner.temp }}/ssh-XXXXXXXXXX/agent.XXXX ubuntu@13.235.16.99 <<EOF
+          ssh -i ${{ runner.temp }}/ssh-XXXXXXXXXX/agent.XXXX ubuntu@15.206.173.55 <<EOF
           cd /var/www/brainstormtest.hopto.org
           git pull origin main 
           # Additional deployment steps if needed
