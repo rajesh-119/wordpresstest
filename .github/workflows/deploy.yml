@@ -20,8 +20,9 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -i ${{ runner.temp }}/ssh-XXXXXXXXXX/agent.XXXX ubuntu@15.206.173.55 <<EOF
-          cd /var/www/brainstormtest.hopto.org
-          git pull origin main 
+          # Add the SSH key to the known_hosts file to avoid host key verification issues.
+          ssh-keyscan -H 15.206.173.55 >> ~/.ssh/known_hosts
+
+          # Execute the deployment commands
+          ssh ubuntu@15.206.173.55 'cd /var/www/brainstormtest.hopto.org && git pull origin main'
           # Additional deployment steps if needed
-          EOF
